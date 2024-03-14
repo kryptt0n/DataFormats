@@ -11,11 +11,12 @@ namespace DataFormats
 {
     public class Pan
     {
+        private DataHandler handler;
 
         public Pan()
         {
             ArrayList option = new ArrayList();
-            option = [1, 2];
+            option = [1, 2, 3];
             while (true)
             {
                 //main control panel loop
@@ -35,16 +36,15 @@ namespace DataFormats
                     }
                     else if (value == 2)
                     {
+                        Dispaly();
+                    } else if (value == 3)
+                    {
                         ExitSystem();
                     }
                 }
             }
         }
-        //If the pan is called with the output string, the display method will be call then the deafualt constructor
-        public Pan(String output):this() 
-        {
-            Dispaly(output);
-        }
+        
         //Catch input data and call PassDataClass
         private void InputData()
         {
@@ -55,6 +55,8 @@ namespace DataFormats
                 Console.WriteLine("Please input the value");
             }
             PassData Path = new PassData(data);
+            CreateHandler createHandler = new CreateHandler();
+            handler = createHandler.CreateHandler();
             
         }
         //Exit System
@@ -64,8 +66,9 @@ namespace DataFormats
             System.Environment.Exit(0);
         }
         //Display Dataline
-        public void Dispaly(String data)
+        public void Dispaly()
         {
+            string data = handler.ReadData();
             Console.WriteLine($"The output of the data is {data}");
         }
         
