@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace DataFormats
 {
-    public class DataStroage
+    public class DataStorage
     {
-        private static DataStroage? instance;
+        private static DataStorage? instance;
 
-        public static DataStroage Instance
+        public static DataStorage Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new DataStroage();
+                    instance = new DataStorage();
                 }
                 return instance;
             }
         }
         public String Path {  get; set; }
-        private DataStroage()
+        private DataStorage()
         {
             Path = String.Empty;
         }

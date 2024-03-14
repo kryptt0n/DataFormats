@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 
 namespace DataFormats
 {
-    internal class PassData
+    public class PassData
     {
-        private DataStroage storage;
+        private DataStorage storage;
         public PassData(string data)
         {
-            storage = DataStroage.Instance;
+            storage = DataStorage.Instance;
             AddorReplacePath(data);
         }
 
         private void AddorReplacePath(string data)
         {
             storage.Path = data;
-            CreateHandler handler = new CreateHandler();
         }
 
     }
