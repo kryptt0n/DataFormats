@@ -39,7 +39,7 @@ namespace DataFormats
                     }
                     else if (value == 2)
                     {
-                        Dispaly();
+                        Display();
                     } else if (value == 3)
                     {
                         ExitSystem();
@@ -69,7 +69,7 @@ namespace DataFormats
             System.Environment.Exit(0);
         }
         //Display Dataline
-        public void Dispaly()
+        public void Display()
         {
             string data = handler.ReadData();
             Console.WriteLine($"The output of the data is {data}");
