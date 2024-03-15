@@ -15,12 +15,15 @@ namespace DataFormats
 
         public Pan()
         {
-            ArrayList option = new ArrayList();
-            option = [1, 2, 3];
+            List<int> option = new List<int>();
+            option.AddRange(new int[]{ 1, 2, 3});
             while (true)
             {
                 //main control panel loop
-                Console.WriteLine("Please Select the following service \n1: Input new Path\n2: Exit Program");
+                Console.WriteLine("Please Select the following service \n" +
+                    "1: Input new Path\n" +
+                    "2: Display content\n" +
+                    "3: Exit");
                 string input = Console.ReadLine();
                 bool result = int.TryParse(input, out int value);
                 if (result == false || option.Contains(value)==false)
@@ -56,7 +59,7 @@ namespace DataFormats
             }
             PassData Path = new PassData(data);
             CreateHandler createHandler = new CreateHandler();
-            handler = createHandler.CreateHandler();
+            handler = createHandler.Create();
             
         }
         //Exit System

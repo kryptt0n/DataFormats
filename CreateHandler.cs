@@ -16,7 +16,7 @@ namespace DataFormats
             dataStorage = DataStorage.Instance;
         }
 
-        public DataHandler CreateHandler()
+        public DataHandler Create()
         {
             string path = dataStorage.Path;
             switch (ParsePath(path))
